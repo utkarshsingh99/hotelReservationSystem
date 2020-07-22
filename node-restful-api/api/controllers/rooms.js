@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 const Room = require("../models/room");
 
 exports.get_available_rooms = (req, res, next) => {
-  let addr = req.body.address;
-  let cin = new Date(req.body.checkIn);
-  let cout = new Date(req.body.checkOut);
-  let bedCapacity = req.body.bedCapacity;
-  let maxRent = req.body.maxRent;
+  let addr = req.body.address
+  let cin = new Date(req.body.checkIn)
+  let cout = new Date(req.body.checkOut)
+  let bedCapacity = req.body.bedCapacity
+  let maxRent = req.body.maxRent
   var availableRooms = [];
   if(addr === undefined || cin === undefined || cout === undefined)
   {
@@ -45,7 +45,6 @@ exports.get_available_rooms = (req, res, next) => {
               // });
               res.render('search-results', {rooms : availableRooms})
           }
-          res.render('search-results', {rooms : availableRooms})
       });
   })
   .catch(err => {
