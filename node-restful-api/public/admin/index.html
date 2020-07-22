@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Room for couples :*
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label>Room Number</label>
+                        <input type="text" name="roomNumber" id="roomNumber">
+                    </div>
+                    <div>
+                        <label>Features</label>
+                        <input type="text" name="features" id="features">
+                    </div>
+                    <div>
+                        <label>Bed Capacity</label>
+                        <input type="text" name="bedCapacity" id="bedCapacity">
+                    </div>
+                    <div>
+                        <label>Rent</label>
+                        <input type="text" name="rent" id="rent">
+                    </div>
+                    <div>
+                        <label>Address</label>
+                        <input type="text" name="address" id="address">
+                    </div>
+                    <div>
+                        <label>Booking Status</label>
+                        <input type="text" name="bookingStatus" id="bookingStatus">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="roomList">
+                    <thead>
+                        <tr>
+                            <th>Room Number</th>
+                            <th>Features</th>
+                            <th>Bed Capacity</th>
+                            <th>Rent</th>
+                            <th>Address</th>
+                            <th>Booking Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>

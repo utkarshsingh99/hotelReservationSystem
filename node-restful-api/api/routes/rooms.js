@@ -30,7 +30,7 @@ const upload = multer({
   fileFilter: fileFilter
 });
 
-router.get("/", RoomsController.get_available_rooms);
+router.post("/search", RoomsController.get_available_rooms);
 
 router.post("/", checkAuth, upload.single('productImage'), RoomsController.add_room);
 

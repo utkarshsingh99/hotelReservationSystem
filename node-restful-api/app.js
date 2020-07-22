@@ -15,9 +15,11 @@ mongoose.connect('mongodb://localhost:27017/HotelReservationSystem', {useNewUrlP
 mongoose.Promise = global.Promise;
 
 app.use(morgan("dev"));
+app.use(express.static('public'));
 app.use('/uploads', express.static('uploads'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.set('view engine', 'ejs');
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -36,6 +38,8 @@ app.use((req, res, next) => {
 app.use("/rooms", roomRoutes);
 app.use("/bookings", bookingRoutes);
 app.use("/user", userRoutes);
+
+app.get('/',(req, res) => res.render(index));
 
 app.use((req, res, next) => {
   const error = new Error("Not found");
