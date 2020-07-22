@@ -40,6 +40,7 @@ app.use("/bookings", bookingRoutes);
 app.use("/user", userRoutes);
 
 app.get('/', (req, res) => res.render('index'));
+app.get('/a/dd', (req, res) => res.render('search-results'))
 
 app.use((req, res, next) => {
   const error = new Error("Not found");
