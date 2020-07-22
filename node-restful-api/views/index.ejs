@@ -10,14 +10,14 @@
     <title>Website Name</title>
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -94,62 +94,60 @@
 
     <!-- Hero Section Begin -->
     <section class="hero spad set-bg" data-setbg="img/hero.jpg">
-        <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-12">
                     <div class="hero__text">
-                        <h5>WELCOME to Website_Name, Fill in the details</h5>
+                        <h5>WELCOME to Hotel Booking Service , Fill in the details</h5>
                         <!-- <h2>Your Search for Hotels stops here!</h2> -->
                     </div>
-                    <form action="#" class="filter__form">
+                    <form method="POST" action="/rooms/search" class="filter__form">
                         <div class="filter__form__item filter__form__item--search">
                             <p>Location</p>
                             <div class="filter__form__input">
-                                <input type="text" placeholder="Search Location">
+                                <input name="address" type="text" placeholder="Search Location">
                                 <span class="icon_search"></span>
                             </div>
                         </div>
                         <div class="filter__form__item">
                             <p>Check In</p>
-                            <div class="filter__form__datepicker">
-                                <span class="icon_calendar"></span>
-                                <input type="text" class="datepicker_pop check__in">
-                                <i class="arrow_carrot-down"></i>
+                            <div class="filter__form__input">
+                                <input name="checkIn" name="checkIn" type="date">
                             </div>
                         </div>
                         <div class="filter__form__item">
-                            <p>Check Out</p>
-                            <div class="filter__form__datepicker">
-                                <span class="icon_calendar"></span>
-                                <input type="text" class="datepicker_pop check__out">
-                                <i class="arrow_carrot-down"></i>
+                            <p>Check In</p>
+                            <div class="filter__form__input">
+                                <input name="checkOut" name="checkIn" type="date">
                             </div>
                         </div>
                         <div class="filter__form__item filter__form__item--select">
-                            <p>Person</p>
+
+                            <p>Bed Capacity</p>
                             <div class="filter__form__select">
                                 <span class="icon_group"></span>
-                                <select>
-                                    <option value="">2 Adult, 1 Children</option>
-                                    <option value="">2 Adult</option>
-                                    <option value="">1 Adult</option>
+                                <select name="bedCapacity">
+                                    <option value="2">2 Adult</option>
+                                    <option value="1">1 Adult</option>
                                 </select>
                             </div>
                         </div>
                         <div class="filter__form__item filter__form__item--select">
-                            <p>Rent</p>
+                            <p>Maximum Rent</p>
                             <div class="filter__form__select">
                                 <span class="icon_group"></span>
-                                <select>
-                                    <option value="">Below ₹5000</option>
-                                    <option value="">₹5000-₹10,000</option>
-                                    <option value="">Above ₹10,000</option>
+                                <select name="maxRent">
+                                    <option value="5000">₹5000</option>
+                                    <option value="10000">₹10000</option>
+                                    <option value="20000">₹20,000</option>
+                                    <option value="50000">₹50,000</option>
                                 </select>
                             </div>
                         </div>
-                        <!-- <button type="submit">BOOK NOW</button> -->
+                        <div class="row">
+                            <button type="submit">BOOK NOW</button>
+                        </div>
+                        <br>
                     </form>
-                </div>
             </div>
         </div>
     </section>
@@ -240,79 +238,7 @@
     <!-- Services Section End -->
 
     <!-- Home Room Section Begin -->
-    <section class="home-room spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h5>Available Hotels</h5>
-                        <h2>Search Results</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" data-setbg="img/home-room/hr-1.jpg">
-                        <div class="home__room__title">
-                            <h4>Hotel_Name1</h4>
-                            <h2><sup>  ₹</sup>12,000<span>/day Onwards</span></h2>
-                        </div>
-                        <a href="#">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" data-setbg="img/home-room/hr-2.jpg">
-                        <div class="home__room__title">
-                            <h4>Hotel_Name2</h4>
-                            <h2><sup>₹</sup>9,500<span>/day Onwards</span></h2>
-                        </div>
-                        <a href="#">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" data-setbg="img/home-room/hr-3.jpg">
-                        <div class="home__room__title">
-                            <h4>Hotel_Name3</h4>
-                            <h2><sup>₹</sup>7,000<span>/day Onwards</span></h2>
-                        </div>
-                        <a href="#">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" data-setbg="img/home-room/hr-4.jpg">
-                        <div class="home__room__title">
-                            <h4>Hotel_Name4</h4>
-                            <h2><sup>₹</sup>5,000<span>/day Onwards</span></h2>
-                        </div>
-                        <a href="#">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="home__room__item set-bg" data-setbg="img/home-room/hr-4.jpg">
-                        <div class="home__room__title">
-                            <h4>Hotel_Name5</h4>
-                            <h2><sup>₹</sup>3,400<span>/day Onwards</span></h2>
-                        </div>
-                        <a href="#">Book Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="container">
-            <div class="home__explore">
-                <div class="row">
-                    <div class="col-lg-9 col-md-8">
-                        <h3>Planning your next trip? Save up to 25% on your hotel</h3>
-                    </div>
-                    <div class="col-lg-3 col-md-4 text-center">
-                        <a href="#" class="primary-btn">Explorer More</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    </section>
+    
     <!-- Home Room Section End -->
 
     <!-- Testimonial Section Begin -->
@@ -665,13 +591,13 @@
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
