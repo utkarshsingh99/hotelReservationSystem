@@ -8,8 +8,8 @@ const roomRoutes = require("./api/routes/rooms");
 const bookingRoutes = require("./api/routes/bookings");
 const userRoutes = require('./api/routes/user');
 
-mongoose.connect('mongodb://localhost:27017/HotelReservationSystem', {useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true} , () => {
-    console.log('DB Connected')
+mongoose.connect('mongodb://localhost:27017/HotelReservationSystem', { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true }, () => {
+  console.log('DB Connected')
 });
 
 mongoose.Promise = global.Promise;
@@ -39,7 +39,7 @@ app.use("/rooms", roomRoutes);
 app.use("/bookings", bookingRoutes);
 app.use("/user", userRoutes);
 
-app.get('/',(req, res) => res.render(index));
+app.get('/', (req, res) => res.render('index'));
 
 app.use((req, res, next) => {
   const error = new Error("Not found");
