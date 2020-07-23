@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const Booking = require("../models/booking");
 const Room = require("../models/room");
 
+const stripe = require('stripe')('sk_test_Flc1Upp19T0q8ZgmKGDVJUI400j9emUSTr');
+
 exports.get_all = (req, res, next) => {
   Booking.find()
     .select("product quantity _id")

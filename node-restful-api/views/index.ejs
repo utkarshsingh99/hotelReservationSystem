@@ -100,6 +100,7 @@
                         <h5>WELCOME to Hotel Booking Service , Fill in the details</h5>
                         <!-- <h2>Your Search for Hotels stops here!</h2> -->
                     </div>
+                    <div class = "">
                     <form method="POST" action="/rooms/search" class="filter__form">
                         <div class="filter__form__item filter__form__item--search">
                             <p>Location</p>
@@ -111,23 +112,25 @@
                         <div class="filter__form__item">
                             <p>Check In</p>
                             <div class="filter__form__input">
-                                <input name="checkIn" name="checkIn" type="date">
+                                <input name="checkIn" type="date">
                             </div>
                         </div>
                         <div class="filter__form__item">
-                            <p>Check In</p>
+                            <p>Check Out</p>
                             <div class="filter__form__input">
-                                <input name="checkOut" name="checkIn" type="date">
+                                <input name="checkOut" type="date">
                             </div>
                         </div>
                         <div class="filter__form__item filter__form__item--select">
 
-                            <p>Bed Capacity</p>
+                            <p>Capacity</p>
                             <div class="filter__form__select">
                                 <span class="icon_group"></span>
-                                <select name="bedCapacity">
-                                    <option value="2">2 Adult</option>
-                                    <option value="1">1 Adult</option>
+                                <select name="bedCapacity" placeholder="Select capacity">
+                                    <option value="4">4 Adults</option>
+                                    <option value="3">3 Adults</option>
+                                    <option value="2">2 Adults</option>
+                                    <option value="1">1 Adults</option>
                                 </select>
                             </div>
                         </div>
@@ -135,7 +138,7 @@
                             <p>Maximum Rent</p>
                             <div class="filter__form__select">
                                 <span class="icon_group"></span>
-                                <select name="maxRent">
+                                <select name="maxRent" >
                                     <option value="5000">₹5000</option>
                                     <option value="10000">₹10000</option>
                                     <option value="20000">₹20,000</option>
@@ -144,10 +147,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <button type="submit">BOOK NOW</button>
+                            <button type="submit">SEARCH HOTELS</button>
                         </div>
                         <br>
                     </form>
+                    </div>
             </div>
         </div>
     </section>

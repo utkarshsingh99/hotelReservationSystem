@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
 const Room = require("../models/room");
+const date = require("date-and-time");
 
 exports.get_available_rooms = (req, res, next) => {
   let addr = req.body.address
   let cin = new Date(req.body.checkIn)
   let cout = new Date(req.body.checkOut)
+  console.log("Number of days = ", date.subtract(cout, cin).toDays());
+  let days = date.subtract(cout, cin).toDays();
   let bedCapacity = req.body.bedCapacity
   let maxRent = req.body.maxRent
   var availableRooms = [];
@@ -16,16 +19,18 @@ exports.get_available_rooms = (req, res, next) => {
   Room.find( {address: addr} )
   .then(rooms => {
       let i = 0;
+      console.log(rooms);
       rooms.forEach(room => {
           i++;
           if((bedCapacity === undefined || room.bedCapacity == bedCapacity) && (maxRent === undefined || room.rent <= maxRent) )
           {
+              room.total = room.rent*days;
               availableRooms.push(room);
               console.log(room)
               room.bookingStatus.forEach(booking => {
                   Client.findOne({"_id": booking})
                   .then(b => {
-                      console.log(b)
+                      console.log(b);
                       if(cout < b.checkIn || cin > b.checkOut)
                       {
                       }

@@ -113,11 +113,22 @@
                     <div class="home__room__item set-bg" data-setbg="/img/home-room/hotel1.jpeg">
                         <div class="home__room__title">
                             <!-- <h4>Number : 201</h4> -->
-                            <h4>Price: <%=room.rent%><span>/day</span></h4>
+                            <h4>Price: <%=room.total%><span> (<%=room.rent%>/day)</span></h4>
                             <h4>Features: <%= room.features %></h4>
-                            <h4>Bed Capacity: <%=bedCapacity%></h4>
+                            <h4>Bed Capacity: <%=room.bedCapacity%></h4>
                         </div>
-                        <a href="#">Book Now</a>
+                        <button id="order-btn" class="btn">BOOK NOW</button>
+                        <script src="https://js.stripe.com/v3/"></script>
+                        <script>
+                            var stripe = Stripe('pk_test_51H4Gi5Jyol9p8VxZ8z9VBpJieHLL52y2kzho1RgPpFAuWWahsqeAsqa2a8IWYmBH2S7WeAG6S56EzxdeJxet5rVn001efy5CV2');
+                            var orderBtn = document.getElementById('order-btn');
+                            
+                            orderBtn.addEventListener('click', function() {
+                                stripe.redirectToCheckout({
+                                    sessionId: '<%= sessionId %>'
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
                 <%}); %>
