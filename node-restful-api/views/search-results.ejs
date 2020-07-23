@@ -118,17 +118,8 @@
                             <h4>Bed Capacity: <%=room.bedCapacity%></h4>
                         </div>
                         <button id="order-btn" class="btn">BOOK NOW</button>
-                        <script src="https://js.stripe.com/v3/"></script>
-                        <script>
-                            var stripe = Stripe('pk_test_51H4Gi5Jyol9p8VxZ8z9VBpJieHLL52y2kzho1RgPpFAuWWahsqeAsqa2a8IWYmBH2S7WeAG6S56EzxdeJxet5rVn001efy5CV2');
-                            var orderBtn = document.getElementById('order-btn');
-                            
-                            orderBtn.addEventListener('click', function() {
-                                stripe.redirectToCheckout({
-                                    sessionId: '<%= sessionId %>'
-                                });
-                            });
-                        </script>
+                        <a href="#">Book Now</a>
+
                     </div>
                 </div>
                 <%}); %>
