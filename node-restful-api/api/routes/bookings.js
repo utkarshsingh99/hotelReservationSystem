@@ -11,6 +11,7 @@ router.post("/", checkAuth, BookingsController.confirm_booking);
 
 router.get("/:bookingId", checkAuth, BookingsController.get_booking);
 
+const stripe = require("stripe")("--SECRET KEY BEGINNING WITH sk_...");
 router.get('/checkout', async (req, res) => {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
