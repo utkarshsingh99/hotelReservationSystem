@@ -13,7 +13,7 @@ router.get("/:bookingId", checkAuth, BookingsController.get_booking);
 
 router.get('/checkout', async (req, res) => {
     const session = // ... Fetch or create the Checkout Session
-    res.render('checkout', session_id: <%=session.id %>);
+    res.render('checkout', {});
   });
 
 router.delete("/:bookingId", checkAuth, BookingsController.delete_booking);
