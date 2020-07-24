@@ -118,8 +118,28 @@
                             <h4>Bed Capacity: <%=room.bedCapacity%></h4>
                         </div>
                         <button id="order-btn" class="btn">BOOK NOW</button>
-                        <a href="#">Book Now</a>
-
+                        <script src="https://js.stripe.com/v3/"></script>
+                        <a href="bookings/checkout?id=" + ${room._id}>Book Now</a>
+                        <script>
+                            const stripe = require('stripe')('sk_test_51H4Gi5Jyol9p8VxZwHVGNCK60G8u1Gt64DVzdJj9x6scIcP07qA6iGOIPfVGJBkyoY3kjI919N8DOLBdrMaWNelQ00XTez4HXc');
+                            const session = await stripe.checkout.sessions.create({
+                            payment_method_types: ['card'],
+                            line_items: [{
+                                price_data: {
+                                currency: 'inr',
+                                product_data: {
+                                    name: 'Hotel Charge',
+                                    id : room._id
+                                },
+                                unit_amount: room.total,
+                                },
+                                quantity: 1,
+                            }],
+                            mode: 'payment',
+                            success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
+                            cancel_url: 'https://example.com/cancel',
+                            });
+                        </script>
                     </div>
                 </div>
                 <%}); %>
